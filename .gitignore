@@ -1,0 +1,18 @@
+# Large model weights (exceed GitHub's 100MB limit)
+*.safetensors
+*.pkl
+*.bin
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Env / OS
+.env
+.env.*
+.DS_Store

@@ -1,0 +1,89 @@
+:root {
+  --bg: #f5f6fa;
+  --card: #fff;
+  --text: #1c1e26;
+  --muted: #6b7080;
+  --accent: #4f46e5;
+  --good: #16a34a;
+  --bad: #dc2626;
+  --border: #dfe2ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12131a;
+    --card: #1c1e29;
+    --text: #eceef5;
+    --muted: #9aa0b4;
+    --border: #2f3243;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.card {
+  width: min(640px, calc(100% - 32px));
+  margin: 32px 0;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+h1 { margin: 0; font-size: 1.6rem; }
+.sub { margin: -8px 0 0; color: var(--muted); font-size: 0.95rem; }
+textarea {
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+}
+textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip:hover { color: var(--text); border-color: var(--accent); }
+.primary {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.error { color: var(--bad); font-size: 0.9rem; }
+.result { padding: 16px; border-radius: 12px; border: 1px solid; }
+.result.good { border-color: var(--good); }
+.result.bad { border-color: var(--bad); }
+.verdict { font-weight: 600; margin-bottom: 10px; }
+.good .verdict { color: var(--good); }
+.bad .verdict { color: var(--bad); }
+.bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.bar div { height: 100%; background: var(--bad); transition: width 0.3s; }
+.meta { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; color: var(--muted); }
+.quote { margin-bottom: 6px; font-size: 0.9rem; }
+.train { padding: 12px 14px; border: 1px solid var(--border); border-radius: 12px; }
+.train-head { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+.train-bar div { background: var(--accent); }
